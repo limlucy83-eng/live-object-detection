@@ -1,23 +1,36 @@
-🎥 Live Object Detection & Tracing
+# 🎥 Live Object Detection & Tracing
+
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-FF4B4B.svg)](https://streamlit.io/)
+[![YOLOv8](https://img.shields.io/badge/YOLOv8-8.0+-00FFFF.svg)](https://github.com/ultralytics/ultralytics)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 A real-time object detection and tracking web application built with Streamlit, YOLOv8, and WebRTC. This application provides live video analysis directly from your webcam with instant object detection and counting capabilities.
-✨ Features
-🎯 Real-time Detection: Process video frames in real-time with minimal latency
-📊 Object Counting: Automatic counting of detected objects with on-screen display
-🎥 WebRTC Integration: Direct webcam access through browser using WebRTC
-🤖 YOLOv8 Nano: Lightweight yet powerful object detection model
-📱 Responsive UI: Clean, modern interface built with Streamlit
-🔄 Object Tracking: Persistent tracking of objects across frames
-💚 Visual Feedback: Bounding boxes and labels overlaid on video feed
-📋 Prerequisites
-Python 3.8 or higher
-Webcam
-Modern web browser (Chrome, Firefox, Edge, or Safari)
-pip package manager
-🚀 Installation
-Clone the repository
-bash
-12
-Create a virtual environment (recommended)
+
+## ✨ Features
+
+- 🎯 **Real-time Detection**: Process video frames in real-time with minimal latency
+- 📊 **Object Counting**: Automatic counting of detected objects with on-screen display
+- 🎥 **WebRTC Integration**: Direct webcam access through browser using WebRTC
+- 🤖 **YOLOv8 Nano**: Lightweight yet powerful object detection model
+- 📱 **Responsive UI**: Clean, modern interface built with Streamlit
+- 🔄 **Object Tracking**: Persistent tracking of objects across frames
+- 💚 **Visual Feedback**: Bounding boxes and labels overlaid on video feed
+
+## 📋 Prerequisites
+
+- Python 3.8 or higher
+- Webcam
+- Modern web browser (Chrome, Firefox, Edge, or Safari)
+- pip package manager
+
+## 🚀 Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd live_objective
+   Create a virtual environment (recommended)
 bash
 1234567
 Install dependencies
@@ -111,7 +124,7 @@ Use GPU acceleration (CUDA-enabled PyTorch)
 Reduce video resolution if needed
 Adjust confidence threshold
 Use a more powerful YOLO model if accuracy is prioritized over speed
-Customization
+🔧 Customization
 Change Detection Model
 python
 1234
@@ -143,3 +156,4 @@ YOLOv8 Documentation
 WebRTC Guide
 Made with ❤️ using Streamlit and YOLOv8
 Last Updated: May 2026
+```
