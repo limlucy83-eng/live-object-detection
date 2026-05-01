@@ -41,18 +41,53 @@ A real-time object detection and tracking web application built with Streamlit, 
 source venv/Scripts/activate
 # Linux/Mac:
 source venv/bin/activate
-Install dependenciesBashpip install streamlit streamlit-webrtc ultralytics opencv-python av numpy
-Download the YOLOv8 modelThe model (yolov8n.pt) will automatically download upon first execution.📁 Project StructurePlaintextlive_objective/
-├── app.py              # Main application logic
-├── requirements.txt    # List of dependencies
-├── yolov8n.pt         # Model weights (auto-downloaded)
-└── README.md           # Project documentation
-🎮 UsageRun the applicationBashstreamlit run app.py
-Access the applicationNavigate to http://localhost:8501 in your browser.PermissionsAllow browser access to your webcam when prompted.💻 Code OverviewModel LoadingPythonfrom ultralytics import YOLO
+
+# Install dependencies
+pip install streamlit streamlit-webrtc ultralytics opencv-python av numpy
+
+# Download the YOLOv8 model
+# The model (yolov8n.pt) will automatically download upon first execution.
+
+# 📁 Project Structure
+# live_objective/
+# ├── app.py              # Main application logic
+# ├── requirements.txt    # List of dependencies
+# ├── yolov8n.pt          # Model weights (auto-downloaded)
+# └── README.md           # Project documentation
+
+# 🎮 Usage
+# Run the application:
+streamlit run app.py
+
+# Access the application:
+# Navigate to http://localhost:8501 in your browser.
+# Permissions: Allow browser access to your webcam when prompted.
+
+# 💻 Code Overview
+# Model Loading:
+from ultralytics import YOLO
 model = YOLO('yolov8n.pt')
-Video Frame ProcessingPythondef video_frame_callback(frame):
+
+# Video Frame Processing:
+def video_frame_callback(frame):
     img = frame.to_ndarray(format="bgr24")
     results = model.track(img, persist=True, conf=0.5)
     annotated_frame = results[0].plot()
     return av.VideoFrame.from_ndarray(annotated_frame, format="bgr24")
-📦 DependenciesPackageVersionPurposestreamlit≥1.28.0Web frameworkstreamlit-webrtc≥0.47.0Video streamingultralytics≥8.0.0YOLOv8 detectionopencv-python≥4.8.0Image processingav≥10.0.0PyAV frame handling🔧 TroubleshootingCamera not working: Check browser permissions or ensure no other app is using the camera.Slow performance: Use a smaller resolution or ensure your device isn't on power-saving mode.Model error: Ensure yolov8n.pt is in the same directory as app.py.📄 LicenseThis project is licensed under the MIT License.Made with ❤️ using Streamlit and YOLOv8Last Updated: May 2026
+
+# 📦 Dependencies
+# streamlit          ≥1.28.0   Web framework
+# streamlit-webrtc   ≥0.47.0   Video streaming
+# ultralytics        ≥8.0.0    YOLOv8 detection
+# opencv-python      ≥4.8.0    Image processing
+# av                 ≥10.0.0   PyAV frame handling
+
+# 🔧 Troubleshooting
+# Camera not working: Check browser permissions or ensure no other app is using the camera.
+# Slow performance: Use a smaller resolution or ensure your device isn't on power-saving mode.
+# Model error: Ensure yolov8n.pt is in the same directory as app.py.
+
+# 📄 License
+# This project is licensed under the MIT License.
+# Made with ❤️ using Streamlit and YOLOv8
+# Last Updated: May 2026
