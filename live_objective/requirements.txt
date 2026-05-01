@@ -1,7 +1,8 @@
 streamlit
-streamlit_webrtc
+streamlit-webrtc
 ultralytics
 opencv-python-headless
 av
 torch
 torchvision
+tornado==6.4
